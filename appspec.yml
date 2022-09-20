@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /usr/share/nginx/akaunting
+hooks:
+  BeforeInstall:
+    - location: beforeinstall.sh
+      runas: ec2-user
+  AfterInstall:
+    - location: afterinstall.sh
+      runas: ec2-user
